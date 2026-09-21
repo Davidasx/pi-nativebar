@@ -35,8 +35,11 @@ pi-powerbar: an editor-top widget plus an emptied native footer.
 ## Install
 
 ```bash
-pi install npm:@davidasx/pi-nativebar
+pi install git:github.com/Davidasx/pi-nativebar
 ```
+
+Updates ship via plain `git push` — no npm involved. Re-run the install command above (or `pi update`)
+to pick up new commits.
 **Load order:** this package must be listed **after** `@juanibiapina/pi-extension-settings`
 in the `packages` array of `~/.pi/agent/settings.json` (same requirement as pi-powerbar),
 because it registers its settings with pi-extension-settings at load time.

@@ -539,8 +539,9 @@ export default function createExtension(pi: ExtensionAPI): void {
 
 	// Register with pi-extension-settings when present (event, no import needed).
 	// Local extensions load before npm packages, so pi-extension-settings' listener
-	// may not exist at load time; re-emit on session_start when all extensions are
-	// guaranteed loaded. The registry stores by name, so re-emitting is idempotent.
+	// Registers at load time only, exactly like pi-powerbar; this package must be
+	// listed after @juanibiapina/pi-extension-settings in the packages array so the
+	// listener already exists.
 	function registerWithSettingsExtension(): void {
 		pi.events.emit("pi-extension-settings:register", {
 			name: EXTENSION_NAME,
@@ -706,7 +707,6 @@ export default function createExtension(pi: ExtensionAPI): void {
 	pi.on("session_start", async (_event, ctx) => {
 		latestCtx = ctx;
 		tokenState = undefined;
-		registerWithSettingsExtension();
 		settings = loadSettings(ctx.cwd);
 		registerBar(ctx);
 		if (ctx.hasUI) startWatchingSettings(ctx.cwd);
