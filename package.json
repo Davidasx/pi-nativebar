@@ -1,0 +1,41 @@
+{
+	"name": "pi-nativebar",
+	"version": "0.1.0",
+	"description": "Pi extension that renders a pi-powerbar-style status bar reading Pi's native footer data, so extension status chips (e.g. pi-goal) show up in the bar",
+	"type": "module",
+	"keywords": [
+		"pi",
+		"pi-package",
+		"extension",
+		"status-bar",
+		"footer"
+	],
+	"files": [
+		"index.ts",
+		"README.md",
+		"LICENSE"
+	],
+	"pi": {
+		"extensions": [
+			"./index.ts"
+		]
+	},
+	"scripts": {
+		"typecheck": "tsc --noEmit"
+	},
+	"author": "Davidasx",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Davidasx/pi-nativebar.git"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"devDependencies": {
+		"@earendil-works/pi-coding-agent": "^0.85.1",
+		"@earendil-works/pi-tui": "^0.85.1",
+		"@types/node": "^26.0.1",
+		"typescript": "^5.9.2"
+	}
+}
