@@ -1,5 +1,5 @@
 {
-	"name": "pi-nativebar",
+	"name": "@davidasx/pi-nativebar",
 	"version": "0.1.0",
 	"description": "Pi extension that renders a pi-powerbar-style status bar reading Pi's native footer data, so extension status chips (e.g. pi-goal) show up in the bar",
 	"type": "module",
@@ -28,6 +28,10 @@
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Davidasx/pi-nativebar.git"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/",
+		"access": "public"
 	},
 	"engines": {
 		"node": ">=20.0.0"
